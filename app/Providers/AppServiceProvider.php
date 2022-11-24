@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Collection;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('layouts.app', function (\Illuminate\View\View $view) {
+            $collections = Collection::query()->get();
+
+            $view->with(compact('collections'));
+        });
     }
 }
