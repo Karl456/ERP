@@ -17,7 +17,6 @@ return new class extends Migration
             $table->uuid('id');
             $table->string('name');
             $table->string('handle');
-            $table->jsonb('fields')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

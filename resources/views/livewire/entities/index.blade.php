@@ -17,8 +17,8 @@
             <div class="p-4 border border-collapse border-gray-200 border-t-0">
                 <div class="grid grid-cols-{{ $collection->keyFields->count() }}">
                     @foreach($collection->keyFields as $keyfield)
-                        <div class="col-span-1">
-                            {{ $entity->field_values[$keyfield->handle] ?? null }}
+                        <div class="col-span-1 cursor-pointer" onclick="window.location = '{{ route('entities.show', [$entity->collection->handle, $entity->id]) }}'">
+                            {{ $entity->field_values->{$keyfield->handle} ?? null }}
                         </div>
                     @endforeach
                 </div>

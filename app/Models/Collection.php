@@ -48,7 +48,7 @@ class Collection extends Model
 
     public function keyFields(): HasMany
     {
-        return $this->fields()->where('primary', true);
+        return $this->fields()->where('in_table', true);
     }
 
     public function entities(): HasMany

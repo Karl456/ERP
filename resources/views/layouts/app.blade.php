@@ -16,7 +16,7 @@
         <div class="flex flex-grow min-h-full">
             <aside class="w-64 bg-white shadow-md flex flex-col">
                 <div class="flex-grow">
-                    <a href="" class="block mb-2 p-2 text-blue-400">Home</a>
+                    <a href="{{ route('pages.index') }}" class="block mb-2 p-2 text-blue-400">Home</a>
                     @foreach($collections as $collection)
                         <a href="{{ route('entities.index', $collection->handle) }}" class="block mb-2 p-2 text-blue-400">{{ $collection->name }}</a>
                     @endforeach

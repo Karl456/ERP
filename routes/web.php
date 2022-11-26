@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('', \App\Http\Livewire\Pages\Index::class)->name('pages.index');
+
 Route::get('collections', \App\Http\Livewire\Collections\Index::class)->name('collections.index');
 Route::get('collections/create', \App\Http\Livewire\Collections\Create::class)->name('collections.create');
 Route::get('collections/{collection}/edit', \App\Http\Livewire\Collections\Edit::class)->name('collections.edit');

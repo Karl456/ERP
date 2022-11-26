@@ -42,7 +42,10 @@
                                     </select>
                                 @endif
                                 <div>
-                                    <input type="checkbox" wire:model.defer="fields.{{ $field['id'] }}.primary" value="1"> Primary?
+                                    <input type="radio" name="primary" wire:model.defer="fields.{{ $field['id'] }}.primary" value="1"> Primary?
+                                </div>
+                                <div>
+                                    <input type="checkbox" wire:model.defer="fields.{{ $field['id'] }}.in_table" value="1"> In table?
                                 </div>
                                 <div>
                                     <input type="checkbox" wire:model.defer="fields.{{ $field['id'] }}.required" value="1"> Required?

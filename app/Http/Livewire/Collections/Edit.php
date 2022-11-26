@@ -40,6 +40,7 @@ class Edit extends Component
             'fields.*.type' => 'required',
             'fields.*.required' => '',
             'fields.*.primary' => '',
+            'fields.*.in_table' => '',
         ];
     }
 
@@ -77,6 +78,7 @@ class Edit extends Component
         $this->collection->fields()->create([
             'name' => '',
             'type' => CollectionFieldTypes::TEXT,
+            'primary' => $this->fields->count() === 0,
         ]);
 
         $this->fields = $this->collection->fields()->get()->keyBy('id')->toArray();

@@ -22,12 +22,14 @@ class CollectionField extends Model
     protected $fillable = [
         'name',
         'type',
+        'config',
+        'in_table',
         'primary',
         'required',
     ];
 
     protected $casts = [
-        'config' => 'json',
+        'config' => 'object',
     ];
 
     public function name(): Attribute

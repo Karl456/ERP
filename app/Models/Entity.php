@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\FieldValueCast;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -24,7 +25,7 @@ class Entity extends Model
     ];
 
     protected $casts = [
-        'field_values' => 'json',
+        'field_values' => FieldValueCast::class,
     ];
 
     public function collection(): BelongsTo
