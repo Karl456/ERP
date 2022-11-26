@@ -44,6 +44,19 @@ class Create extends Component
         return $validationRules;
     }
 
+    public function messages(): array
+    {
+        $validationMessages = [];
+
+        foreach($this->fields as $field) {
+            if($field->required) {
+                $validationMessages['field_values.' . $field->handle] = $field->name . ' field is required';
+            }
+        }
+
+        return $validationMessages;
+    }
+
     public function render(): View
     {
         return view('livewire.entities.create');
